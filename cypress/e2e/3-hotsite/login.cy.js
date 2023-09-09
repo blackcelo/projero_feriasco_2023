@@ -122,7 +122,7 @@ describe('Login Elegível celular invalido', () => {
 
 describe('Tentativa de Login sem preencher todos os campos', () => {
 
-    it.only('Tentativa de Login sem preencher todos os campos', () => {
+    it('Tentativa de Login sem preencher todos os campos', () => {
         cy.visit('http://webapp-hotsite-staging.platform.ferias.in/#/')
         .get('#content_width > .content_component')
         cy.get('#cpf')
@@ -131,7 +131,6 @@ describe('Tentativa de Login sem preencher todos os campos', () => {
         .type('flunamc@yopmail.com')
         cy.get('#celular')
         cy.get('app-identificacao-usuario > .fc-btn')
-    
     
     })
 })
