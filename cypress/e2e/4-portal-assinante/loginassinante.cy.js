@@ -49,7 +49,7 @@ describe('Login CPF inválido', () => {
         cy.get('#btn_save')
         .click()
         cy.get('.error-message')
-        .contains('Digite o CPF')
+        .contains('CPF digitado é inválido')
 
     })
 
