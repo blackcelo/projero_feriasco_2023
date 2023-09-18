@@ -110,7 +110,7 @@ describe('Login Elegível celular invalido', () => {
         cy.get('#personal-email')
         .type('flunamc@yopmail.com')
         cy.get('#celular')
-        .type('11555555555')
+        .type('11555555559')
         cy.get('app-identificacao-usuario > .fc-btn')
         .click()
         cy.get('.error-message')
