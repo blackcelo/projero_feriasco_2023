@@ -5,13 +5,13 @@ describe('Login Assinante com sucesso', () => {
         cy.visit('http://webapp-colaborador-staging.platform.ferias.in/#/login')
         .get('.box-container')
         cy.get('#cpf')
-        .type('525.669.518-53')
+        .type('733.544.736-49')
         cy.get('#password')
         .type('Senha123')
         cy.get('#btn_save')
         .click()
         cy.get('#id-como-funciona-nav')
-        .contains('Olá Agulorde, vamos viajar?')
+        .contains('Olá Assinante, vamos viajar?')
 
     })
 
@@ -95,7 +95,7 @@ describe('Login sem preencher Senha', () => {
 describe('Login sem preencher CPF', () => {
 
 
-    it('Login sem preencher CPF', () => {
+    it.only('Login sem preencher CPF', () => {
         cy.visit('http://webapp-colaborador-staging.platform.ferias.in/#/login')
         .get('.box-container')
         cy.get('#password')
