@@ -4,14 +4,15 @@ describe('Login Assinante com sucesso', () => {
     it('Login assinante sucesso', () => {
         cy.visit('http://webapp-colaborador-staging.platform.ferias.in/#/login')
         .get('.box-container')
-        cy.get('#cpf')
+        cy.get('#cpf').should("have.value", "")
         .type('733.544.736-49')
-        cy.get('#password')
+        cy.get('#password').should("have.value", "")
         .type('Senha123')
         cy.get('#btn_save')
         .click()
         cy.get('#id-como-funciona-nav')
         .contains('Olá Assinante, vamos viajar?')
+        cy.get('.title-page').should('be.visible','Para onde quer ir?')
 
     })
 
@@ -30,7 +31,7 @@ describe('Login Elegível com erro', () => {
         cy.get('#btn_save')
         .click()
         cy.get('.error-message')
-        .contains('CPF ou senha inválidos.')
+        .should('be.visible', 'CPF ou senha inválidos.')
 
     })
 
@@ -49,7 +50,7 @@ describe('Login CPF inválido', () => {
         cy.get('#btn_save')
         .click()
         cy.get('.error-message')
-        .contains('CPF digitado é inválido')
+        .should('be.visible', 'CPF digitado é inválido')
 
     })
 
@@ -68,7 +69,7 @@ describe('Login Senha inválida', () => {
         cy.get('#btn_save')
         .click()
         cy.get('.error-message')
-        .contains('CPF ou senha inválidos.')
+        .should('be.visible' ,'CPF ou senha inválidos.')
 
     })
 
@@ -86,7 +87,7 @@ describe('Login sem preencher Senha', () => {
         cy.get('#btn_save')
         .click()
         cy.get('.error-message')
-        .contains('Digite a senha')
+        .should('be.visible' ,'Digite a senha')
 
     })
 
@@ -95,7 +96,7 @@ describe('Login sem preencher Senha', () => {
 describe('Login sem preencher CPF', () => {
 
 
-    it.only('Login sem preencher CPF', () => {
+    it('Login sem preencher CPF', () => {
         cy.visit('http://webapp-colaborador-staging.platform.ferias.in/#/login')
         .get('.box-container')
         cy.get('#password')
@@ -103,7 +104,7 @@ describe('Login sem preencher CPF', () => {
         cy.get('#btn_save')
         .click()
         cy.get('.error-message')
-        .contains('Digite o CPF')
+        .should('be.visible' ,'Digite o CPF')
 
     })
 
