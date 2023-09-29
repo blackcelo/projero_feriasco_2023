@@ -2,11 +2,11 @@ describe('Login', () => {
 
     it('Login Elegível com sucesso', () => {
         cy.visit('http://webapp-hotsite-staging.platform.ferias.in/#/').get('#content_width > .content_component')
-        cy.get('#cpf').type('706.736.128-13')
-        cy.get('#personal-email').type('elegivelstagin@yopmail.com')
-        cy.get('#celular').type('11992704855')
+        cy.get('#cpf').type('75328503155')
+        cy.get('#personal-email').type('eleumaut@yopmail.com')
+        cy.get('#celular').type('11995422710')
         cy.get('app-identificacao-usuario > .fc-btn').click()
-        cy.get('#nav-options > :nth-child(7)',{timeout: 8000}).should('have.text', 'Olá Elegível, vamos viajar? ')
+        cy.get('#nav-options > :nth-child(7)',{timeout: 8000}).should('have.text', 'Olá Elegivel, vamos viajar? ')
         cy.get('fc-planos-exibir-contas').should('be.visible')
 
     })
@@ -17,9 +17,9 @@ describe('Login Elegível premiado', () => {
 
     it('Login Elegível premiado com sucesso', () => {
         cy.visit('http://webapp-hotsite-staging.platform.ferias.in/#/').get('#content_width > .content_component')
-        cy.get('#cpf').type('727.456.981-33')
+        cy.get('#cpf').type('45646564816')
         cy.get('#personal-email').type('elegivelpremiado@yopmail.com')
-        cy.get('#celular').type('11992704966')
+        cy.get('#celular').type('11995523720')
         cy.get('app-identificacao-usuario > .fc-btn').click()
         cy.get('app-parabens-premiacao.ng-star-inserted > :nth-child(1) > .content_width', {timeout: 8000}).should('be.visible', 'Parabéns! Você ganhou um presentão da sua empresa.')
         cy.get('.boxMessage > .fc-btn').click()
@@ -50,7 +50,7 @@ describe('Tentativa de Login Assinante', () => {
 
     it('Login Assinante', () => {
         cy.visit('http://webapp-hotsite-staging.platform.ferias.in/#/').get('#content_width > .content_component')
-        cy.get('#cpf').type('733.544.736-49')
+        cy.get('#cpf').type('735.314.561-72')
         cy.get('#personal-email').type('assinanteautstg@yopmail.com')
         cy.get('#celular').type('11992704077')
         cy.get('app-identificacao-usuario > .fc-btn').click()
