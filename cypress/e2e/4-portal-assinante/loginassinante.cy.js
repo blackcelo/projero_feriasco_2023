@@ -3,7 +3,7 @@ describe('Login Assinante com sucesso', () => {
 
     it('Login assinante sucesso', () => {
         cy.visit('http://webapp-colaborador-staging.platform.ferias.in/#/login').get('.box-container')
-        cy.get('#cpf').should("have.value", "").type('733.544.736-49')
+        cy.get('#cpf').should("have.value", "").type('73531456172')
         cy.get('#password').should("have.value", "").type('Senha123')
         cy.get('#btn_save').click()
         cy.get('#id-como-funciona-nav').contains('Olá Assinante, vamos viajar?')
@@ -18,7 +18,7 @@ describe('Login Elegível com erro', () => {
 
     it('Login elegível com erro', () => {
         cy.visit('http://webapp-colaborador-staging.platform.ferias.in/#/login').get('.box-container')
-        cy.get('#cpf').type('741.066.866-00')
+        cy.get('#cpf').type('32177535506')
         cy.get('#password').type('Senha123')
         cy.get('#btn_save').click()
         cy.get('.error-message').should('be.visible', 'CPF ou senha inválidos.')
